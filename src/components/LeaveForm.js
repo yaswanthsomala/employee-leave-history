@@ -2,11 +2,10 @@ import React from "react";
 
 const LeaveForm = () => {
   return (
-    <div
-      className=""
-      style={{ marginTop: "5px", paddingTop: "5px", backgroundColor: "white" }}
-    ></div>
+    <div className="form-wrapper">
+      <div className="form-container">
+      </div>
+    </div>
   );
 };
-
 export default LeaveForm;
