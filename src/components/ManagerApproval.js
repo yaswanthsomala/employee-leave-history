@@ -12,27 +12,29 @@ const ManagerApproval = () => {
     >
       <h2>Manager Approval</h2>
       <table>
-        <tr>
-          <th>Employee Id</th>
-          <th>Start Date</th>
-          <th>End Date</th>
-          <th>Number of Days</th>
-          <th>Action</th>
-        </tr>
+        <tbody>
+          <tr>
+            <th>Employee Id</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Number of Days</th>
+            <th>Action</th>
+          </tr>
 
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>
-            <button>Apply</button>
-            <button style={{ marginLeft: "5px" }}>Reject</button>
-            <button style={{ marginLeft: "5px" }} onClick={handleInfo}>
-              Need More Info
-            </button>
-          </td>
-        </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+              <button>Apply</button>
+              <button style={{ marginLeft: "5px" }}>Reject</button>
+              <button style={{ marginLeft: "5px" }} onClick={handleInfo}>
+                Need More Info
+              </button>
+            </td>
+          </tr>
+        </tbody>
       </table>
     </div>
   );

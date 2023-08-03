@@ -4,10 +4,12 @@ import axios from "axios";
 
 const EmployeeDetail = () => {
   const [empId, setEmpId] = useState("");
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
 
   const handleApply = async () => {
     const { data } =
-      await axios.get(`http://34.201.131.37:8000/api/api/employee/apply_leave?emp_id=${empId}&startDate=&endDate=
+      await axios.post(`http://34.201.131.37:8000/api/api/employee/apply_leave?emp_id=${empId}&startDate=${startDate}&endDate=${endDate}
     `);
     console.log(data);
   };
@@ -16,11 +18,12 @@ const EmployeeDetail = () => {
     setEmpId(e.target.value);
   };
 
-  const handleStartDate = (data) => {
-    console.log(new Date(data));
+  const handleStartDate = (e) => {
+    setStartDate(e.target.value);
   };
-
-  console.log(empId);
+  const handleEndDate = (e) => {
+    setEndDate(e.target.value);
+  };
 
   return (
     <>
@@ -38,17 +41,17 @@ const EmployeeDetail = () => {
           }}
         >
           <div style={{ display: "flex", gap: "1rem" }}>
-            <label for="fname">Employee ID</label>
+            <label htmlFor="fname">Employee ID</label>
             <input
-              type="text"
-              id="fname"
-              name="fname"
-              placeholder="Employee Name"
+              type="number"
+              id="empId"
+              name="empId"
+              placeholder="Employee ID"
               onChange={handleEmpId}
             />
           </div>
           <div style={{ display: "flex", gap: "1rem" }}>
-            <label for="start">From Date</label>
+            <label htmlFor="start">From Date</label>
             <input
               type="date"
               id="start"
@@ -57,8 +60,8 @@ const EmployeeDetail = () => {
             />
           </div>
           <div style={{ display: "flex", gap: "1rem" }}>
-            <label for="end">To Date</label>
-            <input type="date" id="end" name="end" />
+            <label htmlFor="end">To Date</label>
+            <input type="date" id="end" name="end" onChange={handleEndDate} />
           </div>
           <div>
             <button onClick={handleApply}>Apply</button>

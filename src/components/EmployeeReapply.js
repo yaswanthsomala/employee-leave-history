@@ -8,28 +8,30 @@ const EmployeeReapply = () => {
     >
       <h2>Employee Re-Apply</h2>
       <table>
-        <tr>
-          <th>Employee Id</th>
-          <th>Start Date</th>
-          <th>End Date</th>
-          <th>Need More Info</th>
-          <th>Action</th>
-        </tr>
+        <tbody>
+          <tr>
+            <th>Employee Id</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Need More Info</th>
+            <th>Action</th>
+          </tr>
 
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>
-            <input
-              placeholder="provide reason"
-              style={{ width: "98%" }}
-            ></input>
-          </td>
-          <td>
-            <button>Re-Apply</button>
-          </td>
-        </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+              <input
+                placeholder="provide reason"
+                style={{ width: "98%" }}
+              ></input>
+            </td>
+            <td>
+              <button>Re-Apply</button>
+            </td>
+          </tr>
+        </tbody>
       </table>
     </div>
   );
