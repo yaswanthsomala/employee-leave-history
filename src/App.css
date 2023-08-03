@@ -44,6 +44,7 @@
 
 
 
+
 .container {
   width: 100%;
   padding-right: 15px;
@@ -69,4 +70,35 @@ td, th {
   border: 1px solid black;
   text-align: left;
   padding: 8px;
+}
+
+
+/* Spinner */
+
+.spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  border-top: 5px solid #007bff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;
+  z-index: 2;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.bg-blur{
+  opacity: 0.5;
 }
