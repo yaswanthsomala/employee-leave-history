@@ -1,16 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 
 const ManagerApproval = () => {
   const handleInfo = () => {
-    prompt("Provide the reason!");
+    const reasonData = prompt("Provide the reason!");
+    setReason(reasonData);
   };
+  const [reason, setReason] = useState("");
+
+  console.log(reason);
 
   return (
     <div
       className=""
       style={{ marginTop: "5px", paddingTop: "5px", backgroundColor: "white" }}
     >
-      <h2>Manager Approval</h2>
+      <h2 style={{ padding: "1rem 0", fontSize: "1.5rem" }}>
+        Manager Approval
+      </h2>
       <table>
         <tbody>
           <tr>

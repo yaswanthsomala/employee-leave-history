@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+
 // import Calendar from "react-calendar";
 
-const EmployeeDetail = () => {
+const EmployeeDetail = ({ isLoading, setIsLoading }) => {
   const [empId, setEmpId] = useState("");
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const [response, setResponse] = useState({});
 
   const handleApply = async () => {
+    setIsLoading(true);
     await axios
       .post(
         `http://34.201.131.37:8000/api/api/employee/apply_leave?emp_id=${empId}&startDate=${startDate}&endDate=${endDate}
@@ -17,6 +19,7 @@ const EmployeeDetail = () => {
       .then((res) => setResponse(res?.data?.msg))
       .catch((error) => alert("Something went wrong"));
     authorize();
+    setIsLoading(false);
   };
 
   console.log(response);
@@ -69,7 +72,7 @@ const EmployeeDetail = () => {
 
   return (
     <>
-      <h3 style={{ padding: "1rem", fontSize: "1.5rem" }}>Employee Leave</h3>
+      <h2 style={{ padding: "1rem 0", fontSize: "1.5rem" }}>Employee Leave</h2>
       <div>
         <div
           style={{
@@ -80,6 +83,7 @@ const EmployeeDetail = () => {
             // border: "1px solid rgb(221, 221, 221)",
             border: "1px solid black",
             justifyContent: "space-evenly",
+            alignItems: "center",
           }}
         >
           <div style={{ display: "flex", gap: "1rem" }}>
@@ -106,7 +110,9 @@ const EmployeeDetail = () => {
             <input type="date" id="end" name="end" onChange={handleEndDate} />
           </div>
           <div>
-            <button onClick={handleApply}>Apply</button>
+            <button onClick={handleApply} disabled={isLoading}>
+              Apply
+            </button>
           </div>
         </div>
       </div>
