@@ -6,7 +6,7 @@ const EmployeeReapply = () => {
       className=""
       style={{ marginTop: "5px", paddingTop: "5px", backgroundColor: "white" }}
     >
-      <h2>Employee Reapply</h2>
+      <h2>Employee Re-Apply</h2>
       <table>
         <tr>
           <th>Employee Id</th>
@@ -21,7 +21,10 @@ const EmployeeReapply = () => {
           <td></td>
           <td></td>
           <td>
-            <input placeholder="Type here"></input>
+            <input
+              placeholder="provide reason"
+              style={{ width: "98%" }}
+            ></input>
           </td>
           <td>
             <button>Re-Apply</button>

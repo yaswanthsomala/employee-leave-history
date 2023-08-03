@@ -6,7 +6,7 @@ import EmployeeReapply from "./EmployeeReapply";
 const LeaveForm = () => {
   return (
     <div className="form-wrapper">
-      <div className="form-container">
+      <div className="form-container" style={{ border: "1px solid black" }}>
         <EmployeeDetail />
         <ManagerApproval />
         <EmployeeReapply />
